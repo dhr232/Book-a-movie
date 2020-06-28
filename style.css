@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #242333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+/* For Pick a movie line */
+.movie-container {
+  margin: 15px 0;
+}
+
+.movie-container select {
+  background-color: #fff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: 10px;
+  padding: 5px 15px;
+}
+
+/* Styling for seating options row */
+.container {
+  perspective: 600px;
+  margin-bottom: 5px;
+}
+/* styling for seat option */
+.seat {
+  background-color: #444451;
+  height: 12px;
+  width: 15px;
+  margin: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.seat.selected {
+  background-color: #6feaf6;
+}
+
+.seat.occupied {
+  background-color: #fff;
+}
+
+/* Screen element */
+.screen {
+  height: 100px;
+  width: 100%;
+  background-color: #fff;
+  margin: 5px 0px;
+  /* for tilt window */
+  transform: rotateX(-45deg);
+  /* Add shadow to screen */
+  box-shadow: 0px 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+/* stying for seating arrangement */
+.showcase {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  /* border-radius: 5px; */
+  color: #777;
+  display: flex;
+  text-align: center;
+  /* justify-content: space-between; */
+  list-style-type: none;
+}
+
+.showcase li {
+  display: flex;
+  /* text-align: center; */
+  justify-content: center;
+  margin: 0px 10px;
+}
+
+.showcase li small {
+  margin: 0px 5px;
+}
+
+/* styling all row content */
+.row {
+  display: flex;
+}
+
+/* stying for theatre seats */
+.seat:nth-child(2) {
+  /* Every second seat will have below property */
+  margin-right: 18px;
+}
+
+.seat:nth-child(7) {
+  /* Every second seat will have below property */
+  margin-left: 18px;
+}
+/* Styling for seat that is not occupied */
+.showcase .seat:not(.occupied):hover {
+  transform: scale(1);
+  cursor: progress;
+}
+/* styling for select a seat */
+.seat:not(.occupied):hover {
+  /* hover will scale seat by 1.3 time */
+  transform: scale(1.3);
+  cursor: grab;
+}
+
+.seat.occupied:hover {
+  /* transform: scale(1.1); */
+  cursor: help;
+}
+
+p.text span {
+  color: #6feaf6;
+  /* text-decoration: line-through; */
+  /* text-decoration-style: solid; */
+}
